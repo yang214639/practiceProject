@@ -1,0 +1,138 @@
+﻿<!DOCTYPE HTML>
+
+<!--
+    Full Motion by TEMPLATED
+    templated.co @@templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+@model practiceProject.Models.userlist
+
+<html>
+<head>
+    <title>Full Motion</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-datetimepicker.css" />
+    <script type="text/javascript" src="~/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/scripts/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="~/scripts/jquery-ui.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">
+
+
+
+</head>
+
+<body id="top">
+
+    @using (Html.BeginForm("Registered", "Default",FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div id="main" style="text-align:center">
+            <div class="inner">
+                <span style="font-size:40px">註冊會員</span>
+
+                <div class="form-group">
+                    <span style="font-size:30px;">
+                        @Html.LabelFor(model => model.user_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </span>
+                    @Html.TextBoxFor(model => model.user_Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.user_Name, "請輸入使用者名稱", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <span style="font-size:30px">
+                        @Html.LabelFor(model => model.user_Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </span>
+                    @Html.TextBoxFor(model => model.user_Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.user_Password, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <span style="font-size:30px">
+                        @Html.LabelFor(model => model.gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </span>
+
+                    @Html.DropDownListFor(model => model.gender, (List<SelectListItem>)ViewBag.GenderSelect, "請選擇...", new { @style = "color:white;background-color:#29292C;" })
+                    @Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    <span style="font-size:30px">
+                        @Html.LabelFor(model => model.birth_Day, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </span>
+                    @*<script>
+                        $(function () {
+                            $(".startdate").datepicker({
+                                dateFormat: 'yy-mm-dd',//check change
+                                changeMonth: true,
+                                changeYear: true
+                            });
+                        })
+                    </script>*@
+                    <input type='date' name="birth_Day" class="startdate" style="color:white;background-color:#29292C;" />
+                    
+                    @*<div class='input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control" style="color:white;background-color:#29292C;" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker').data("DateTimePicker").FUNCTION()
+            });
+        </script>*@
+                    @Html.ValidationMessageFor(model => model.birth_Day, "請輸入日期", new { @class = "text-danger" })
+                </div>
+                    <div class="form-group">
+                        <span style="font-size:30px">
+                            @Html.LabelFor(model => model.birth_Time, htmlAttributes: new { @class = "control-label col-md-2" })
+                        </span>
+                        @Html.DropDownListFor(model => model.birth_Time, (List<SelectListItem>)ViewBag.timeSelect, "請選擇...", new { @style = "color:white;background-color:#29292C;" })
+                        @Html.ValidationMessageFor(model => model.birth_Time, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="form-group">
+                        <span style="font-size:30px">
+                            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        </span>
+                        @Html.TextBoxFor(model => model.email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <p></p><p></p>
+                        <input type="submit" value="送出" name="submit" class="button style2 fit" />
+                    </div>
+                
+            </div>
+        </div>
+    }
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <h2>Etiam veroeros lorem</h2>
+            <p>Pellentesque eleifend malesuada efficitur. Curabitur volutpat dui mi, ac imperdiet dolor tincidunt nec. Ut erat lectus, dictum sit amet lectus a, aliquet rutrum mauris. Etiam nec lectus hendrerit, consectetur risus viverra, iaculis orci. Phasellus eu nibh ut mi luctus auctor. Donec sit amet dolor in diam feugiat venenatis. </p>
+
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a href="http://coverr.co/">Coverr</a>.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+</body>
+</html>

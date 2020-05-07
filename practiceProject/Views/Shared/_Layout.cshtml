@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link rel="stylesheet" href="~/Content/main.css" />
+</head>
+<body>
+    <!-- Banner -->
+    <!--
+        To use a video as your background, set data-video to the name of your video without
+        its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+        formats to work correctly.
+    -->
+    <section id="banner" data-video="images/banner">
+        <div class="inner">
+            <header>
+                <h1>@ViewBag.userName</h1>
+                <p>
+                    @{
+                        if (ViewBag.isLogin == false)
+                        {
+                            @Html.ActionLink("登入", "Login", null, new { @class = "button fit" });
+                        }
+                        else if (ViewBag.userName != null)
+                        {
+                            @Html.ActionLink("登出", "Logout", null, new { @class = "button fit" });
+                        }
+                        else
+                        {
+                            @Html.ActionLink("返回", "index", null, new { @class = "button fit" });
+                        }
+                      }
+                </p>
+            </header>
+            <a href="#main" class="more">Learn More</a>
+        </div>
+    </section>
+
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/Scripts/jquery.scrolly.min.js"></script>
+        <script src="~/Scripts/jquery.poptrox.min.js"></script>
+        <script src="~/Scripts/skel.min.js"></script>
+        <script src="~/Scripts/util.js"></script>
+        <script src="~/Scripts/main.js"></script>
+</body>
+</html>

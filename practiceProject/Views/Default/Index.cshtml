@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Full Motion by TEMPLATED
+    templated.co @@templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+    <title>MVC Demo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+</head>
+<body id="top">
+
+   
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Boxes -->
+            <div class="thumbnails">
+
+                <div class="box">
+
+                    <img src="~/images/pic01.jpg" class="image fit">
+                    <div class="inner">
+                        <h3>骨重算命</h3>
+                        <p>利用出生年月日時辰計算骨重並解命</p>
+                        @using (Html.BeginForm("index", "main", new { area = "BoneHeavy" }))
+                        {
+                            <button type="submit" class="button style2 fit">GO</button>
+                        }
+                    </div>
+                </div>
+                
+                <div class="box">
+
+                    <img src="~/images/pic02.jpg" class="image fit">
+                    <div class="inner">
+                        <h3>擴充功能</h3>
+                        <p>待擴充...</p>
+                        
+                            <button type="submit" class="button style2 fit">GO</button>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <h2>Etiam veroeros lorem</h2>
+            <p>Pellentesque eleifend malesuada efficitur. Curabitur volutpat dui mi, ac imperdiet dolor tincidunt nec. Ut erat lectus, dictum sit amet lectus a, aliquet rutrum mauris. Etiam nec lectus hendrerit, consectetur risus viverra, iaculis orci. Phasellus eu nibh ut mi luctus auctor. Donec sit amet dolor in diam feugiat venenatis. </p>
+
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a href="http://coverr.co/">Coverr</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.scrolly.min.js"></script>
+    <script src="~/Scripts/jquery.poptrox.min.js"></script>
+    <script src="~/Scripts/skel.min.js"></script>
+    <script src="~/Scripts/util.js"></script>
+    <script src="~/Scripts/main.js"></script>
+
+</body>
+</html>
